@@ -1,6 +1,11 @@
 package com.pfm.Spring_Backend.controller;
 
 import com.pfm.Spring_Backend.dto.InputDto;
+import com.pfm.Spring_Backend.repository.UserRepository;
+
+import java.util.List;
+
+import com.pfm.Spring_Backend.domain.User;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -38,6 +44,15 @@ class Hello {
 @RestController
 @RequestMapping("/api/user")
 public class HelloController {
+
+    @Autowired
+    UserRepository userRepository;
+
+    @GetMapping("/")
+    public @ResponseBody List<User> getAllUsers() {
+
+        return userRepository.findAll();
+    }
 
     @GetMapping("/{userId}")
     public @ResponseBody Hello getHello(@PathVariable("userId") int id) {
