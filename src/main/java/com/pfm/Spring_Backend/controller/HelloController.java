@@ -2,6 +2,7 @@ package com.pfm.Spring_Backend.controller;
 
 import com.pfm.Spring_Backend.dto.InputDto;
 import com.pfm.Spring_Backend.repository.UserRepository;
+import com.pfm.Spring_Backend.service.RestTemplateService;
 
 import java.util.List;
 
@@ -47,6 +48,13 @@ public class HelloController {
 
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    RestTemplateService restTemplateService;
+
+    @GetMapping("/naver")
+    public String naver() {
+        return restTemplateService.NaverAPI();
+    }
 
     @GetMapping("/")
     public @ResponseBody List<User> getAllUsers() {

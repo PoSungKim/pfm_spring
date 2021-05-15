@@ -21,4 +21,6 @@ class HelloControllerTest {
                 .andExpect(content().json("{\"value\" : \"Hello User\"}"));
     }
 
+    StringBuilder java = new StringBuilder();
+
 }

@@ -28,7 +28,6 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class User {
-
     @Id
     @GeneratedValue
     private Long id;
