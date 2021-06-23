@@ -12,6 +12,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Service
 public class RestTemplateService {
     // products > 서비스 API > 검색 > 지역
+    // https://developers.naver.com/docs/serviceapi/search/local/local.md#%EC%A7%80%EC%97%AD
 
     public String NaverAPI() {
 
